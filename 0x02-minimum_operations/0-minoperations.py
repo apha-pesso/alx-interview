@@ -37,7 +37,12 @@ def minOperations(n):
 
     # if isPrime(n):
         # return n
+    n_factors = prime_factors(n)
+
+    if not (n_factors):
+        return 0
+
     sum = 0
-    for i in prime_factors(n):
+    for i in n_factors:
         sum += i
     return sum
