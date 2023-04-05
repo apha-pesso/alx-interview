@@ -24,10 +24,15 @@ def prime_factors(n):
 
 def minOperations(n):
     """Return minimum operations required to get n number of char"""
-    if ((n < 1) or (type(n) != int)):
+    if (n < 1):
         return 0
+
+    if (type(n) != int):
+        return 0
+
     if (n == 1):
         return 1
+
     if isPrime(n):
         return n
     sum = 0
