@@ -2,16 +2,6 @@
 """Minimum Operations"""
 
 
-# def isPrime(n):
-"""Check for prime numbers"""
-"""
-    for i in range(2, (n//2)):
-        if n % i == 0:
-            return False
-    return True
-"""
-
-
 def prime_factors(n):
     """Return primefactors of a number"""
     factors = []
@@ -20,8 +10,8 @@ def prime_factors(n):
         while (n % i == 0):
             factors.append(i)
             n = n / i
-        # if (i >= n):
-            # break
+        if (i >= n):
+            break
     if n > 1:
         factors.append(n)
     return factors
@@ -35,8 +25,6 @@ def minOperations(n):
     # if (type(n) != int):
         # return 0
 
-    # if isPrime(n):
-        # return n
     n_factors = prime_factors(n)
 
     sum = 0
