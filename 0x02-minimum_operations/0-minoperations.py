@@ -32,8 +32,8 @@ def minOperations(n):
     if (type(n) != int):
         return 0
 
-    # if isPrime(n):
-        # return n
+    if isPrime(n):
+        return n
     n_factors = prime_factors(n)
 
     if not (n_factors):
