@@ -20,8 +20,8 @@ def prime_factors(n):
         while (n % i == 0):
             factors.append(i)
             n = n / i
-        if (i >= n):
-            break
+        # if (i >= n):
+            # break
     if n > 1:
         factors.append(n)
     return factors
