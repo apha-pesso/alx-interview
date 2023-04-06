@@ -29,8 +29,8 @@ def minOperations(n):
     if (n <= 1):
         return 0
 
-    if (type(n) != int):
-        return 0
+    # if (type(n) != int):
+        # return 0
 
     # if isPrime(n):
         # return n
