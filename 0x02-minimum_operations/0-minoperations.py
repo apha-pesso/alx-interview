@@ -16,10 +16,12 @@ def prime_factors(n):
     """Return primefactors of a number"""
     factors = []
     end = (n // 2) + 1
-    for i in range(2, end):
+    for i in range(2, int(end)):
         while (n % i == 0):
             factors.append(i)
             n = n / i
+        if (i >= n):
+            break
     if n > 1:
         factors.append(n)
     return factors
