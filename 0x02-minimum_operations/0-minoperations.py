@@ -18,7 +18,7 @@ def prime_factors(n):
     for i in range(2, n//2):
         while (n % i == 0):
             factors.append(i)
-            n = n // i
+            n = n / i
     if n > 1:
         factors.append(n)
     return factors
@@ -32,12 +32,9 @@ def minOperations(n):
     if (type(n) != int):
         return 0
 
-    if isPrime(n):
-        return n
+    # if isPrime(n):
+        # return n
     n_factors = prime_factors(n)
-
-    if not (n_factors):
-        return 0
 
     sum = 0
     for i in n_factors:
