@@ -18,15 +18,20 @@ try:
             total_file_size += int(files[-1])
 
         if counter % 10 == 0:
-            print('File size: {}'.format(total_file_size))
+            print("File size: " + str(total_file_size))
+            # print('File size: {}'.format(total_file_size))
             sorted_codes = dict(sorted(status_codes.items()))
-            for key, value in sorted_codes.items():
-                if value:
-                    print("{}: {}".format(key, value))
+            for key in sorted_codes.keys():
+                if sorted_codes[key]:
+                    print(str(key) + ": " + str(sorted_codes[key]))
 
 except (KeyboardInterrupt):
-    print('File size: {}'.format(total_file_size))
+    print("File size: " + str(total_file_size))
+    # print('File size: {}'.format(total_file_size))
     sorted_codes = dict(sorted(status_codes.items()))
-    for key, value in sorted_codes.items():
-        print("{}: {}".format(key, value))
+    # for key, value in sorted_codes.items():
+    # print("{}: {}".format(key, value))
+    for key in sorted_codes.keys():
+        if sorted_codes[key]:
+            print(str(key) + ": " + str(sorted_codes[key]))
     raise
