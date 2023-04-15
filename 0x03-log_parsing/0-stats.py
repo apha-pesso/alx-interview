@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Log parsing"""
-import sys
-"""
 from sys import stdin
 
 total_file_size = 0
@@ -25,6 +23,10 @@ try:
             for key in sorted_codes.keys():
                 if sorted_codes[key]:
                     print(str(key) + ": " + str(sorted_codes[key]))
+    print("File size: " + str(total_file_size))
+    for key in status_codes.keys():
+        if status_codes[key]:
+            print(str(key) + ": " + str(status_codes[key]))
 
 except (KeyboardInterrupt):
     print("File size: " + str(total_file_size))
@@ -35,30 +37,4 @@ except (KeyboardInterrupt):
     for key in sorted_codes.keys():
         if sorted_codes[key]:
             print(str(key) + ": " + str(sorted_codes[key]))
-    raise
-"""
-
-
-status_dict = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0,  405: 0, 500: 0}
-stdin = sys.stdin
-counter = 0
-total_file_size = 0
-
-try:
-    for line in stdin:
-        output = line.split()
-        if int(output[-2]) in status_dict.keys() and len(output) == 9:
-            counter += 1
-            status_dict[int(output[-2])] += 1
-            total_file_size += int(output[-1])
-        if counter % 10 == 0:
-            print('File size: {}'.format(total_file_size))
-            for key, value in status_dict.items():
-                if value:
-                    print("{}: {}".format(key, value))
-except KeyboardInterrupt:
-    print('File size: {}'.format(total_file_size))
-    for key, value in status_dict.items():
-        if value:
-            print("{}: {}".format(key, value))
     raise
