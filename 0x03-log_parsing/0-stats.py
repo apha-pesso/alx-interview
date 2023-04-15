@@ -15,6 +15,8 @@ try:
             counter += 1
             status_codes[code] += 1
             total_file_size += int(files[-1])
+        else:
+            return None
 
         if counter % 10 == 0:
             print("File size: " + str(total_file_size))
