@@ -20,7 +20,8 @@ try:
             total_file_size += int(files[-1])
             code = int(files[-2])
             counter += 1
-            status_codes[code] += 1
+            if code in status_codes.keys():
+                status_codes[code] += 1
             # print("TOtal size in loop {}".format(total_file_size))
 
             if counter % 10 == 0:
