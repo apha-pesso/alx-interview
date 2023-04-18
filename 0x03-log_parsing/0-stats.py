@@ -34,9 +34,10 @@ try:
             continue
 
     print("File size: " + str(total_file_size))
-    for key in status_codes.keys():
-        if status_codes[key]:
-            print(str(key) + ": " + str(status_codes[key]))
+    sorted_codes = dict(sorted(status_codes.items()))
+    for key in sorted_codes.keys():
+        if sorted_codes[key]:
+            print(str(key) + ": " + str(sorted_codes[key]))
 
 except (KeyboardInterrupt):
     print("File size: " + str(total_file_size))
