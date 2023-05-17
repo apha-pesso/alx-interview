@@ -26,7 +26,7 @@ def makeChange(coins, total):
              -> 15 * 4 => 4
              box = [-1, 3, 4].filter(mins: for mins > -1)
     box = []
-    '''
+
     box = []
     for i in range(len(sort)):
         target = total
@@ -43,18 +43,17 @@ def makeChange(coins, total):
             box.append(-1)
 
     '''
-    for j in range(len(sort)):
-        for i in range(j, len(sort)):
-            while sort[i] <= total:
-                total = total - sort[i]
-                counter += 1
+    for i in range(len(sort)):
+        while sort[i] <= total:
+            total = total - sort[i]
+            counter += 1
 
-        if total == 0:
-            # return counter
-            box.append(counter)
-        else:
-        # return -1
-            box.append(-1)
+    if total == 0:
+        return counter
+        # box.append(counter)
+        # else:
+    return -1
+    # box.append(-1)
     '''
 
     # res = min(box)
@@ -69,3 +68,4 @@ def makeChange(coins, total):
     # if res > 0:
         # return res
     # return -1
+    '''
