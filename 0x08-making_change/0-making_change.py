@@ -12,6 +12,8 @@ def makeChange(coins, total):
     counter = 0
     if total <= 0:
         return 0
+    if not coins:
+        return -1
     if min(coins) > total:
         return -1
     if sum(coins) == total:
