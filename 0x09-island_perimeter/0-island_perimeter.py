@@ -1,25 +1,35 @@
 #!/usr/bin/python3
-'''Island perimeter'''
+"""
+Island Perimeter
+"""
 
 
 def island_perimeter(grid):
-    '''Island perimeter'''
+    '''Return island perimeter'''
     perimeter = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if grid[i][j] == 1:
-                if i > 0 and i < (len(grid) - 1):
-                    if grid[i - 1][j] == 0:
-                        perimeter += 1
+    rows = len(grid)
+    cols = len(grid[0])
 
-                    if grid[i + 1][j] == 0:
-                        perimeter += 1
+    for row_idx, row in enumerate(grid):
+        for col_idx, col in enumerate(row):
+            if col == 1:
+                perimeter += 4
 
-                    if grid[i][j - 1] == 0:
-                        perimeter += 1
+                # If we are not on the first row and the element directly above
+                # the current element is 1
+                if row_idx > 0 and grid[row_idx - 1][col_idx] == 1:
+                    perimeter -= 1
 
-                    if grid[i][j + 1] == 0:
-                        perimeter += 1
-                else:
-                    return 0
+                # Checks downs and makes sure row_idx is not out of range
+                if row_idx < (rows - 1) and grid[row_idx + 1][col_idx] == 1:
+                    perimeter -= 1
+
+                # Checks left and makes sure col_idx is positive
+                if col_idx > 0 and row[col_idx - 1] == 1:
+                    perimeter -= 1
+
+                # Checks right and makes sure col_idx is not out of range
+                if col_idx < (cols - 1) and row[col_idx + 1] == 1:
+                    perimeter -= 1
+
     return perimeter
