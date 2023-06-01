@@ -28,6 +28,8 @@ def prime_list(n):
 # Prime game
 def prime_winner(n):
     '''returns the winner of a game'''
+    if n == 1:
+        return 'Ben'
 
     # Get list of prime numbers
     list_of_prime = prime_list(n)
