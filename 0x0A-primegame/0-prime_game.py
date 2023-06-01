@@ -44,11 +44,17 @@ def isWinner(x, nums):
     if x > 10000:
         return None
     result = []
+
+    rounds = 0
+
     for num in nums:
+        if (rounds >= x):
+            break
         if num <= 10000:
             result.append(prime_winner(num))
         else:
             pass
+        rounds += 1
 
     ben = result.count('Ben')
     maria = result.count('Maria')
