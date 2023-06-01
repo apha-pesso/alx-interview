@@ -41,8 +41,8 @@ def prime_winner(n):
 
 def isWinner(x, nums):
     '''Function to determine prime game winner'''
-    if x > 10000:
-        return None
+    # if x > 10000:
+    # return None
     result = []
 
     rounds = 0
