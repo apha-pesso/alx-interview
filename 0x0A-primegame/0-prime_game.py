@@ -39,9 +39,14 @@ def prime_winner(n):
 
 def isWinner(x, nums):
     '''Function to determine prime game winner'''
+    if x > 10000:
+        return None
     result = []
     for num in nums:
-        result.append(prime_winner(num))
+        if num <= 10000:
+            result.append(prime_winner(num))
+        else:
+            pass
 
     ben = result.count('Ben')
     maria = result.count('Maria')
