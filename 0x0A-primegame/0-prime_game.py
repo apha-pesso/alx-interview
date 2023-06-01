@@ -19,7 +19,7 @@ def is_prime(n):
 def prime_list(n):
     '''Returns a list of prome number up to n'''
     list_of_prime = []
-    for i in range(n+1):
+    for i in range(n + 1):
         if is_prime(i):
             list_of_prime.append(i)
     return list_of_prime
